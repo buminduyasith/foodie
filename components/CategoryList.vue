@@ -14,13 +14,8 @@
 import Category from "./Category.vue";
 export default {
   components: { Category },
-  //   props: {
-  //     'categories',
-  //   },
+
   props: ["categories"],
-  mounted() {
-    console.log(this.categories);
-  },
 };
 </script>
 

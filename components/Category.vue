@@ -13,24 +13,18 @@
         {{ textTrucated }}
       </b-card-text>
 
-      <b-button
-        href="#"
-        variant="primary"
-        @click="getItemsByCategory(catergory.strCategory)"
-        >Open</b-button
-      >
+      <b-button href="#" variant="primary" @click="openCategory">Open</b-button>
     </b-card>
   </b-col>
 </template>
 
 <script>
-import { mapActions } from "vuex";
 export default {
   props: {
     catergory: Object,
   },
   mounted() {
-    console.log(this.catergory.strCategoryThumb);
+    // console.log(this.catergory.strCategoryThumb);
   },
   computed: {
     textTrucated: function () {
@@ -40,7 +34,11 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["getItemsByCategory"]),
+    // ...mapActions(["getItemsByCategory"]),
+    openCategory() {
+      // alert("done");
+      this.$router.push("/products/" + this.catergory.strCategory);
+    },
   },
 };
 </script>
