@@ -13,12 +13,18 @@
         {{ textTrucated }}
       </b-card-text>
 
-      <b-button href="#" variant="primary">Open</b-button>
+      <b-button
+        href="#"
+        variant="primary"
+        @click="getItemsByCategory(catergory.strCategory)"
+        >Open</b-button
+      >
     </b-card>
   </b-col>
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   props: {
     catergory: Object,
@@ -28,11 +34,13 @@ export default {
   },
   computed: {
     textTrucated: function () {
-      // `this` points to the vm instance
       if (this.catergory.strCategoryDescription.length < 100)
         return this.catergory.strCategoryDescription;
       return this.catergory.strCategoryDescription.substring(0, 100) + "...";
     },
+  },
+  methods: {
+    ...mapActions(["getItemsByCategory"]),
   },
 };
 </script>
