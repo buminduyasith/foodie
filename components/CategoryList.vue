@@ -1,7 +1,7 @@
 <template>
   <b-container class="bv-example-row mt-3">
-    <b-row v-for="(catergory, index) in categories" :key="index">
-      <b-col>
+    <b-row>
+      <b-col cols="4" v-for="(catergory, index) in categories" :key="index">
         <category />
       </b-col>
     </b-row>
