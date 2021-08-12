@@ -13,7 +13,7 @@
         href="#"
         style="width: 100%; margin-top: 10px; margin-bottom: 10px"
         variant="primary"
-        @click="openCategory"
+        @click="addItemToCart(meal)"
         >Buy</b-button
       >
     </b-card>
@@ -22,9 +22,13 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   props: {
     meal: Object,
+  },
+  methods: {
+    ...mapActions(["addItemToCart"]),
   },
 };
 </script>

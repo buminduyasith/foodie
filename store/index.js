@@ -2,7 +2,8 @@ export const state = () => ({
     counter: 10,
     loading: false,
     categories: [],
-    items: []
+    items: [],
+    cart: []
 })
 
 export const mutations = {
@@ -17,6 +18,9 @@ export const mutations = {
     },
     setItems(state, items) {
         state.items = items
+    },
+    setCartItems(state, items) {
+        state.cart.push(items)
     }
 }
 
@@ -44,6 +48,13 @@ export const actions = {
         context.commit('setLoading', false);
         return meals;
         // return categories;
+    },
+
+    async addItemToCart(context, meal) {
+        // alert("done");
+        console.log(meal);
+        context.commit("setCartItems", meal);
+
     }
 }
 
@@ -58,5 +69,8 @@ export const getters = {
     },
     items(state) {
         return state.items;
+    },
+    cartItemCount(state) {
+        return state.cart.length
     }
 }
