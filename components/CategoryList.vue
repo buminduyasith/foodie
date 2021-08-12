@@ -2,8 +2,8 @@
   <b-container class="bv-example-row mt-3">
     <b-row>
       <category
-        v-for="(catergory, index) in categories"
-        :key="index"
+        v-for="catergory in categories"
+        :key="catergory.idCategory"
         :catergory="catergory"
       />
     </b-row>
