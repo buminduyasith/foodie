@@ -1,9 +1,11 @@
 <template>
   <b-container class="bv-example-row mt-3">
     <b-row>
-      <b-col cols="4" v-for="(catergory, index) in categories" :key="index">
-        <category />
-      </b-col>
+      <category
+        v-for="(catergory, index) in categories"
+        :key="index"
+        :catergory="catergory"
+      />
     </b-row>
   </b-container>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <b-col cols="4">
     <b-card
       title="Card Title"
       img-src="https://picsum.photos/600/300/?image=25"
@@ -16,7 +16,7 @@
 
       <b-button href="#" variant="primary">Go somewhere</b-button>
     </b-card>
-  </div>
+  </b-col>
 </template>
 
 <script>
