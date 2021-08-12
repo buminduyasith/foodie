@@ -13,7 +13,7 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <cart-counter :itemCount="cartItemCount" />
+          <cart-counter :itemCount="cartItemCount" to="/" />
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
