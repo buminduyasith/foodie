@@ -28,7 +28,7 @@ export default {
   },
   computed: {
     textTrucated: function () {
-      if (this.catergory.strCategoryDescription.length < 100)
+      if (this.catergory.strCategoryDescription?.length < 100)
         return this.catergory.strCategoryDescription;
       return this.catergory.strCategoryDescription.substring(0, 100) + "...";
     },

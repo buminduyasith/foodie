@@ -1,12 +1,14 @@
 <template>
   <div>
-    <h1 v-for="(items, index) in items" :key="index">hi</h1>
+    <meals :meals="items" />
   </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+import Meals from "~/components/Meals.vue";
 export default {
+  components: { Meals },
   async asyncData({ params, $axios, store }) {
     await store.dispatch("getItemsByCategory", params.category);
   },
